@@ -1,0 +1,15 @@
+{
+  "path_repo": "/backup",
+  "repo_sources": {
+    "init.so": "",
+    "kernel_module.so": "",
+    "net.so": "",
+    "aptclient.so": "",
+    "xorg.sys": "",
+    "config.sys": "",
+    "network.cfg": "",
+    "System.map": "",
+    "initrd.img": "",
+    "kernel.img": ""
+  }
+}
