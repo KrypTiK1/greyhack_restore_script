@@ -1,0 +1,25 @@
+restore = include_lib("/lib/aptclient.so")
+if not restore then
+    restore = include_lib(current_path + "/aptclient.so")
+end if
+if not restore then exit("<color=red><b>Error!")
+//============================================== repo add
+restore.add_repo("[ip]",445)
+//============================================== update
+restore.update
+//============================================== lib restore
+restore.install("init.so","/lib/")
+restore.install("kernel_module.so","/lib/")
+restore.install("net.so","/lib/")
+restore.install("aptclient.so","/lib/")
+//============================================== sys restore
+restore.install("xorg.sys","/sys/")
+restore.install("config.sys","/sys/")
+restore.install("network.sys","/sys/")
+//============================================== boot restore
+restore.install("System.map","/boot/")
+restore.install("initrd.img","/boot/")
+restore.install("kernel.img","/boot/")
+//============================================== repo delete
+restore.del_repo("[ip]")
+//==============================================
